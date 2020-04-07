@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 
-public class ResultadoDTO {
+public class RequisicaoDTO {
     @JsonProperty("primeiro-operando")
     private BigDecimal primeiroOperando;
 
@@ -14,21 +14,11 @@ public class ResultadoDTO {
     @JsonProperty("tipo-operacao")
     private String tipoOperacao;
 
-    private BigDecimal resultado;
-
     public BigDecimal getPrimeiroOperando() { return primeiroOperando; }
-
     public void setPrimeiroOperando(BigDecimal primeiroOperando) { this.primeiroOperando = primeiroOperando; }
-
     public BigDecimal getSegundoOperando() { return segundoOperando; }
-
     public void setSegundoOperando(BigDecimal segundoOperando) { this.segundoOperando = segundoOperando; }
-
-    public BigDecimal getResultado() { return resultado; }
-
-    public void setResultado(BigDecimal resultado) { this.resultado = resultado; }
-
     public String getTipoOperacao() { return tipoOperacao; }
-
     public void setTipoOperacao(String tipoOperacao) { this.tipoOperacao = tipoOperacao; }
 }
+
