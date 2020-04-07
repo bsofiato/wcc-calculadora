@@ -6,6 +6,7 @@ import com.matera.wcc.calculadora.rest.dto.TipoOperacaoDTO;
 import com.matera.wcc.calculadora.service.CalculadoraService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.math.BigDecimal;
 
 import static com.matera.wcc.calculadora.rest.dto.TipoOperacaoDTO.*;
@@ -49,7 +50,7 @@ public class CalculadoraController {
     }
 
     @PostMapping("/calculadora")
-    public ResultadoDTO calculate(@RequestBody RequisicaoDTO requisicaoDTO) {
+    public ResultadoDTO calculate(@Valid @RequestBody RequisicaoDTO requisicaoDTO) {
         BigDecimal x = requisicaoDTO.getPrimeiroOperando();
         BigDecimal y = requisicaoDTO.getSegundoOperando();
         switch(requisicaoDTO.getTipoOperacao()) {

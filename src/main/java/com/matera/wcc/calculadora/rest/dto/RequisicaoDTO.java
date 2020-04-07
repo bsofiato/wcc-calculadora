@@ -2,16 +2,20 @@ package com.matera.wcc.calculadora.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 public class RequisicaoDTO {
     @JsonProperty("primeiro-operando")
+    @NotNull
     private BigDecimal primeiroOperando;
 
     @JsonProperty("segundo-operando")
+    @NotNull
     private BigDecimal segundoOperando;
 
     @JsonProperty("tipo-operacao")
+    @NotNull
     private TipoOperacaoDTO tipoOperacao;
 
     public BigDecimal getPrimeiroOperando() { return primeiroOperando; }
