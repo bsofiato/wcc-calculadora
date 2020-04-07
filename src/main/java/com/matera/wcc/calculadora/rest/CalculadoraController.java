@@ -1,6 +1,7 @@
 package com.matera.wcc.calculadora.rest;
 
 import com.matera.wcc.calculadora.service.CalculadoraService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +33,11 @@ public class CalculadoraController {
     }
 
     @GetMapping("/calculadora/divide")
-    public BigDecimal divide(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
-        return this.service.divide(x, y);
+    public ResponseEntity<BigDecimal> divide(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
+        try {
+            return ResponseEntity.ok(this.service.divide(x, y));
+        } catch (ArithmeticException ex) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
