@@ -33,11 +33,7 @@ public class CalculadoraController {
     }
 
     @GetMapping("/calculadora/divide")
-    public ResponseEntity<BigDecimal> divide(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
-        try {
-            return ResponseEntity.ok(this.service.divide(x, y));
-        } catch (ArithmeticException ex) {
-            return ResponseEntity.badRequest().build();
-        }
+    public BigDecimal divide(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
+        return this.service.divide(x, y);
     }
 }
