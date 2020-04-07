@@ -14,8 +14,23 @@ public class CalculadoraController {
         this.service = service;
     }
 
-    @GetMapping("/calculadora")
-    public int add(@RequestParam("x") int x, @RequestParam("y") int y) {
+    @GetMapping("/calculadora/add")
+    public double add(@RequestParam("x") double x, @RequestParam("y") double y) {
         return this.service.add(x, y);
+    }
+
+    @GetMapping("/calculadora/subtract")
+    public double subtract(@RequestParam("x") double x, @RequestParam("y") double y) {
+        return this.service.subtract(x, y);
+    }
+
+    @GetMapping("/calculadora/multiply")
+    public double multiply(@RequestParam("x") double x, @RequestParam("y") double y) {
+        return this.service.multiply(x, y);
+    }
+
+    @GetMapping("/calculadora/divide")
+    public double divide(@RequestParam("x") double x, @RequestParam("y") double y) {
+        return this.service.divide(x, y);
     }
 }
