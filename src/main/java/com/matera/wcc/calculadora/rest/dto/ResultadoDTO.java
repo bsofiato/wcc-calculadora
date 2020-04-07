@@ -12,7 +12,7 @@ public class ResultadoDTO {
     private BigDecimal segundoOperando;
 
     @JsonProperty("tipo-operacao")
-    private String tipoOperacao;
+    private TipoOperacaoDTO tipoOperacao;
 
     private BigDecimal resultado;
 
@@ -28,7 +28,7 @@ public class ResultadoDTO {
 
     public void setResultado(BigDecimal resultado) { this.resultado = resultado; }
 
-    public String getTipoOperacao() { return tipoOperacao; }
+    public TipoOperacaoDTO getTipoOperacao() { return tipoOperacao; }
 
-    public void setTipoOperacao(String tipoOperacao) { this.tipoOperacao = tipoOperacao; }
+    public void setTipoOperacao(TipoOperacaoDTO tipoOperacao) { this.tipoOperacao = tipoOperacao; }
 }

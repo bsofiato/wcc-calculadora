@@ -12,13 +12,13 @@ public class RequisicaoDTO {
     private BigDecimal segundoOperando;
 
     @JsonProperty("tipo-operacao")
-    private String tipoOperacao;
+    private TipoOperacaoDTO tipoOperacao;
 
     public BigDecimal getPrimeiroOperando() { return primeiroOperando; }
     public void setPrimeiroOperando(BigDecimal primeiroOperando) { this.primeiroOperando = primeiroOperando; }
     public BigDecimal getSegundoOperando() { return segundoOperando; }
     public void setSegundoOperando(BigDecimal segundoOperando) { this.segundoOperando = segundoOperando; }
-    public String getTipoOperacao() { return tipoOperacao; }
-    public void setTipoOperacao(String tipoOperacao) { this.tipoOperacao = tipoOperacao; }
+    public TipoOperacaoDTO getTipoOperacao() { return tipoOperacao; }
+    public void setTipoOperacao(TipoOperacaoDTO tipoOperacao) { this.tipoOperacao = tipoOperacao; }
 }
 
