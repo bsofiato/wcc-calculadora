@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
+
 @RestController
 public class CalculadoraController {
 
@@ -15,22 +17,22 @@ public class CalculadoraController {
     }
 
     @GetMapping("/calculadora/add")
-    public double add(@RequestParam("x") double x, @RequestParam("y") double y) {
+    public BigDecimal add(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
         return this.service.add(x, y);
     }
 
     @GetMapping("/calculadora/subtract")
-    public double subtract(@RequestParam("x") double x, @RequestParam("y") double y) {
+    public BigDecimal subtract(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
         return this.service.subtract(x, y);
     }
 
     @GetMapping("/calculadora/multiply")
-    public double multiply(@RequestParam("x") double x, @RequestParam("y") double y) {
+    public BigDecimal multiply(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
         return this.service.multiply(x, y);
     }
 
     @GetMapping("/calculadora/divide")
-    public double divide(@RequestParam("x") double x, @RequestParam("y") double y) {
+    public BigDecimal divide(@RequestParam("x") BigDecimal x, @RequestParam("y") BigDecimal y) {
         return this.service.divide(x, y);
     }
 }

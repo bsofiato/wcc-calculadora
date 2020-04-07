@@ -2,19 +2,21 @@ package com.matera.wcc.calculadora.service;
 
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class CalculadoraService {
-    public double add(double x, double y) {
-        return x + y;
+    public BigDecimal add(BigDecimal x, BigDecimal y) {
+        return x.add(y);
     }
-    public double subtract(double x, double y) {
-        return x - y;
+    public BigDecimal subtract(BigDecimal x, BigDecimal y) {
+        return x.subtract(y);
     }
-    public double multiply(double x, double y) {
-        return x * y;
+    public BigDecimal multiply(BigDecimal x, BigDecimal y) {
+        return x.multiply(y);
     }
-    public double divide(double x, double y) {
-        return x / y;
+    public BigDecimal divide(BigDecimal x, BigDecimal y) {
+        return x.divide(y);
     }
 
 }
