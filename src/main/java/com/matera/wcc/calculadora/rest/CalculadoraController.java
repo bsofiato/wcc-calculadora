@@ -1,9 +1,11 @@
 package com.matera.wcc.calculadora.rest;
 
+import com.matera.wcc.calculadora.repository.OperacaoRepository;
 import com.matera.wcc.calculadora.rest.dto.RequisicaoDTO;
 import com.matera.wcc.calculadora.rest.dto.ResultadoDTO;
 import com.matera.wcc.calculadora.rest.dto.TipoOperacaoDTO;
 import com.matera.wcc.calculadora.service.CalculadoraService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
