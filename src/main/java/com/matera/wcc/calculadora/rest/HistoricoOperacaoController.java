@@ -40,5 +40,4 @@ public class HistoricoOperacaoController {
         }
         return operacoes;
     }
-
 }
