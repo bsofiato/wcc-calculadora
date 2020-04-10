@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
 import java.util.*;
+import java.util.function.Function;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -79,5 +80,14 @@ public class CollectionTest {
         Instant d2 = Instant.ofEpochMilli(1L);
 
         assertThat(d1.equals(d2)).isTrue();
+    }
+
+
+    @Test
+    public void lambda1() {
+        Function<Integer, Integer> l = x -> x + 1;
+
+        assertThat(l.apply(1)).isEqualTo(2);
+        assertThat(l.apply(10)).isEqualTo(11);
     }
 }
