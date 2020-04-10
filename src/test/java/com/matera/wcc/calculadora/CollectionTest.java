@@ -2,9 +2,7 @@ package com.matera.wcc.calculadora;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,7 +15,7 @@ public class CollectionTest {
         assertThat(list).hasSize(2);
         assertThat(list).containsExactly("TESTE", "TESTE");
     }
--m ""
+
     @Test
     public void arrayList() {
         verificarLista(new ArrayList<>());
@@ -27,6 +25,28 @@ public class CollectionTest {
     @Test
     public void linkedList() {
         verificarLista(new LinkedList<>());
+    }
+
+    @Test
+    public void hashSet() {
+        Set<String> set = new HashSet<String>();
+        set.add("BRUNO");
+        set.add("BRUNO");
+
+        assertThat(set).hasSize(1);
+        assertThat(set).containsExactly("BRUNO");
+    }
+
+    @Test
+    public void hashSetOrder() {
+        Set<String> set = new HashSet<String>();
+        set.add("BRUNO");
+        set.add("BRUNO2");
+        set.add("BRUNO3");
+        set.add("BRUNO4");
+
+        assertThat(set).hasSize(4);
+        assertThat(set).containsExactlyInAnyOrder("BRUNO", "BRUNO2", "BRUNO3", "BRUNO4");
     }
 
 }
