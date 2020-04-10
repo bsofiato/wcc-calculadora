@@ -6,7 +6,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 @Embeddable
-public class Requisicao {
+public class Requisicao implements Comparable<Requisicao> {
     @Column(name="TIMESTAMP")
     private Instant timestamp;
     @Column(name="IP")
@@ -40,5 +40,10 @@ public class Requisicao {
     @Override
     public int hashCode() {
         return Objects.hash(timestamp, ip);
+    }
+
+    @Override
+    public int compareTo(Requisicao requisicao) {
+        return this.timestamp.compareTo(requisicao.getTimestamp());
     }
 }
