@@ -90,4 +90,14 @@ public class CollectionTest {
         assertThat(l.apply(1)).isEqualTo(2);
         assertThat(l.apply(10)).isEqualTo(11);
     }
+
+    @Test
+    public void processarElementos() {
+        Set<String> set = new HashSet<String>();
+        set.add("BRUNO");
+        set.add("BRUNO");
+
+        set.forEach(x -> System.out.println(x));
+    }
+
 }
