@@ -24,5 +24,14 @@ public class RequisicaoDTO {
     public void setSegundoOperando(BigDecimal segundoOperando) { this.segundoOperando = segundoOperando; }
     public TipoOperacaoDTO getTipoOperacao() { return tipoOperacao; }
     public void setTipoOperacao(TipoOperacaoDTO tipoOperacao) { this.tipoOperacao = tipoOperacao; }
+
+    @Override
+    public String toString() {
+        return "RequisicaoDTO{" +
+                "primeiroOperando=" + primeiroOperando +
+                ", segundoOperando=" + segundoOperando +
+                ", tipoOperacao=" + tipoOperacao +
+                '}';
+    }
 }
 
