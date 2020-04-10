@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Instant;
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -98,6 +99,17 @@ public class CollectionTest {
         set.add("BRUNO");
 
         set.forEach(x -> System.out.println(x));
+    }
+
+    @Test
+    public void converterElementos() {
+        Set<String> set = new HashSet<String>();
+        set.add("BRUNO");
+        set.add("BRUNO");
+        set = set.stream().map(x -> x.toLowerCase()).collect(Collectors.toSet());
+
+        assertThat(set).hasSize(1);
+        assertThat(set).containsExactly("bruno");
     }
 
 }
