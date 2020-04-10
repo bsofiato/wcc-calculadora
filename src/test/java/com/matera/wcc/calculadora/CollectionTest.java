@@ -49,4 +49,15 @@ public class CollectionTest {
         assertThat(set).containsExactlyInAnyOrder("BRUNO", "BRUNO2", "BRUNO3", "BRUNO4");
     }
 
+    @Test
+    public void map() {
+        Map<String, String> map = new HashMap<>();
+
+        map.put("batata", "abacaxi");
+        map.put("batata", "banana");
+
+        assertThat(map).hasSize(1);
+        assertThat(map.get("batata")).isEqualTo("banana");
+    }
+
 }
