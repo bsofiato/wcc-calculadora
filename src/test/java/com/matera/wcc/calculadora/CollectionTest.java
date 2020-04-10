@@ -112,4 +112,14 @@ public class CollectionTest {
         assertThat(set).containsExactly("bruno");
     }
 
+    @Test
+    public void filtrandoElementos() {
+        Set<String> set = new HashSet<String>();
+        set.add("BRUNO");
+        set.add("RITA");
+        set = set.stream().filter(x -> x.startsWith("R")).collect(Collectors.toSet());
+
+        assertThat(set).hasSize(1);
+        assertThat(set).containsExactly("RITA");
+    }
 }
