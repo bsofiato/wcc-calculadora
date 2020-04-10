@@ -92,6 +92,7 @@ public class CollectionTest {
         assertThat(l.apply(10)).isEqualTo(11);
     }
 
+
     @Test
     public void processarElementos() {
         Set<String> set = new HashSet<String>();
@@ -122,4 +123,17 @@ public class CollectionTest {
         assertThat(set).hasSize(1);
         assertThat(set).containsExactly("RITA");
     }
+
+    @Test
+    public void combinandoOperacoes() {
+        Set<String> set = new HashSet<String>();
+        set.add("BRUNO");
+        set.add("RITA");
+        set = set.stream().filter(x -> x.startsWith("R")).map(x -> x.toLowerCase()).collect(Collectors.toSet());
+
+        assertThat(set).hasSize(1);
+        assertThat(set).containsExactly("rita");
+    }
+
+
 }
