@@ -10,25 +10,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CollectionTest {
 
-    @Test
-    public void arrayList() {
-        List<String> list = new ArrayList<String>();
+    private void verificarLista(List <String> list) {
         list.add("TESTE");
         list.add("TESTE");
 
         assertThat(list).hasSize(2);
         assertThat(list).containsExactly("TESTE", "TESTE");
     }
+-m ""
+    @Test
+    public void arrayList() {
+        verificarLista(new ArrayList<>());
+    }
 
 
     @Test
     public void linkedList() {
-        List<String> list = new LinkedList<>();
-        list.add("TESTE");
-        list.add("TESTE");
-
-        assertThat(list).hasSize(2);
-        assertThat(list).containsExactly("TESTE", "TESTE");
+        verificarLista(new LinkedList<>());
     }
 
 }
