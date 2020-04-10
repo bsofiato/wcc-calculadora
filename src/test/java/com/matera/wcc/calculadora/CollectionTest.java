@@ -2,6 +2,7 @@ package com.matera.wcc.calculadora;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -60,4 +61,23 @@ public class CollectionTest {
         assertThat(map.get("batata")).isEqualTo("banana");
     }
 
+
+    @Test
+    public void identidade() {
+        Instant d1 = Instant.ofEpochMilli(1L);
+        Instant d2 = Instant.ofEpochMilli(1L);
+
+        System.out.println(d1.toString());
+        System.out.println(d2.toString());
+
+        assertThat(d1 == d2).isFalse();
+    }
+
+    @Test
+    public void igualdade() {
+        Instant d1 = Instant.ofEpochMilli(1L);
+        Instant d2 = Instant.ofEpochMilli(1L);
+
+        assertThat(d1.equals(d2)).isTrue();
+    }
 }
